@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "templatemod",
+	"version": "${version}",
+	"name": "Template Mod",
+	"description": "idk",
+	"authors": [
+		"bscit"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/templatemod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.bscit.templatemod.TemplateMod"
+		],
+		"client": [
+			"dev.bscit.templatemod.TemplateModClient"
+		],
+		"fabric-datagen": [
+			"dev.bscit.templatemod.TemplateModDataGenerator"
+		]
+	},
+	"mixins": [
+		"templatemod.mixins.json",
+		{
+			"config": "templatemod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.0",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {}
+}
