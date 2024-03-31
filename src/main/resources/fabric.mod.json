@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "templatemod",
 	"version": "${version}",
-	"name": "Template Mod",
+	"name": "Test Mod",
 	"description": "idk",
 	"authors": [
 		"bscit"

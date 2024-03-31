@@ -1,3 +1,5 @@
 {
-    "itemGroup.templatemod.general": "Template Mod"
+    "itemGroup.templatemod.general": "Template Mod",
+
+    "block.templatemod.copper_button": "Copper Button"
 }
