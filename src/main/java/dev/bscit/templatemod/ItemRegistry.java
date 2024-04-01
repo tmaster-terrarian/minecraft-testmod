@@ -17,12 +17,16 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ItemRegistry
 {
 	private static final RegistryKey<ItemGroup> MOD_ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(TemplateMod.MOD_ID, "general"));
 
 	public static final Item COPPER_BUTTON_ITEM = createItem("copper_button", new BlockItem(BlockRegistry.COPPER_BUTTON, new FabricItemSettings()));
+	public static final Item DEMO_BLOCK_ITEM = createItem("demo_block", new BlockItem(BlockRegistry.DEMO_BLOCK, new FabricItemSettings()));
+	public static final Item INFUSER_BLOCK_ITEM = createItem("infuser", new BlockItem(BlockRegistry.INFUSER_BLOCK, new FabricItemSettings()));
+	public static final Item TOME_ITEM = createItem("tome", new Item(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON).fireproof()));
 
 	protected static final Item createItem(String id, Item item)
 	{
@@ -36,7 +40,7 @@ public class ItemRegistry
 		Registry.register(Registries.ITEM_GROUP, MOD_ITEM_GROUP, FabricItemGroup.builder()
 			.displayName(Text.translatable("itemGroup." + TemplateMod.MOD_ID + ".general"))
 
-			// .icon(() -> ItemStack.fromNbt(
+			// .icon(() -> ItemStack.fromNbt( // really happy that this works so well
 			// 	new NbtCompoundBuilder()
 			// 	.putString("id", "minecraft:player_head")
 			// 	.putInt("Count", 1)
@@ -55,12 +59,13 @@ public class ItemRegistry
 			// 	.nbt
 			// ))
 
-			// .icon(() -> ItemStack.fromNbt(NbtBuilder.fromString("{id: \"minecraft:player_head\", Count: 1, tag: {SkullOwner: {Id: [I;694128119,-24490869,-2090064117,42578109], Properties: {textures: [{Value: \"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ1ZGQzOTVkYmQ2NGQ0ZGVkMTE4NzFmMDYzNmNiYzI5YjJjZTE5MjgzYjk4ZDlmNWJkY2ZmNWI0ZTFjNDFjMiJ9fX0=\"}]}}}}")))
-
 			.icon(() -> ModItemStack.of("minecraft:player_head", "{SkullOwner: {Id: [I;694128119,-24490869,-2090064117,42578109], Properties: {textures: [{Value: \"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ1ZGQzOTVkYmQ2NGQ0ZGVkMTE4NzFmMDYzNmNiYzI5YjJjZTE5MjgzYjk4ZDlmNWJkY2ZmNWI0ZTFjNDFjMiJ9fX0=\"}]}}}"))
 
 			.entries((context, entries) -> {
 				entries.add(COPPER_BUTTON_ITEM);
+				entries.add(DEMO_BLOCK_ITEM);
+				entries.add(INFUSER_BLOCK_ITEM);
+				entries.add(TOME_ITEM);
 			})
 			.build()
 		);

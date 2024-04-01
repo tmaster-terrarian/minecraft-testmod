@@ -1,5 +1,9 @@
 {
-    "itemGroup.templatemod.general": "Template Mod",
+    "block.templatemod.copper_button": "Copper Button",
+    "block.templatemod.demo_block": "Test Block Entity",
+    "block.templatemod.infuser": "Infuser",
 
-    "block.templatemod.copper_button": "Copper Button"
+    "item.templatemod.tome": "Tome",
+
+    "itemGroup.templatemod.general": "Template Mod"
 }

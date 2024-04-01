@@ -1,12 +1,11 @@
 package dev.bscit.templatemod.lib;
 
 import java.util.UUID;
+
 import net.minecraft.nbt.*;
 
-public class NbtCompoundBuilder extends NbtBuilder
+public class NbtCompoundBuilder extends NbtBuilder<NbtCompound>
 {
-    public NbtCompound nbt;
-
     public NbtCompoundBuilder()
     {
         this.nbt = new NbtCompound();
@@ -18,86 +17,68 @@ public class NbtCompoundBuilder extends NbtBuilder
         return this;
     }
 
-    public NbtCompoundBuilder put(String key, NbtCompoundBuilder builder)
+    public <T extends NbtElement> NbtCompoundBuilder put(String key, NbtBuilder<T> builder)
     {
-        this.nbt.put(key, builder.nbt);
-        return this;
-    }
-    public NbtCompoundBuilder put(String key, NbtListBuilder builder)
-    {
-        this.nbt.put(key, builder.nbt);
-        return this;
+        return this.put(key, (NbtElement)builder.nbt);
     }
 
     public NbtCompoundBuilder putShort(String key, short value)
     {
-        this.nbt.putShort(key, value);
-        return this;
+        return this.put(key, NbtShort.of(value));
     }
 
     public NbtCompoundBuilder putByte(String key, byte value)
     {
-        this.nbt.putByte(key, value);
-        return this;
+        return this.put(key, NbtByte.of(value));
     }
 
     public NbtCompoundBuilder putByteArray(String key, byte[] value)
     {
-        this.nbt.putByteArray(key, value);
-        return this;
+        return this.put(key, new NbtByteArray(value));
     }
 
     public NbtCompoundBuilder putInt(String key, int value)
     {
-        this.nbt.putInt(key, value);
-        return this;
+        return this.put(key, NbtInt.of(value));
     }
 
     public NbtCompoundBuilder putIntArray(String key, int[] value)
     {
-        this.nbt.putIntArray(key, value);
-        return this;
+        return this.put(key, new NbtIntArray(value));
     }
 
     public NbtCompoundBuilder putLong(String key, long value)
     {
-        this.nbt.putLong(key, value);
-        return this;
+        return this.put(key, NbtLong.of(value));
     }
 
     public NbtCompoundBuilder putLongArray(String key, long[] value)
     {
-        this.nbt.putLongArray(key, value);
-        return this;
+        return this.put(key, new NbtLongArray(value));
     }
 
     public NbtCompoundBuilder putUuid(String key, UUID value)
     {
-        this.nbt.putUuid(key, value);
-        return this;
+        return this.put(key, NbtHelper.fromUuid(value));
     }
 
     public NbtCompoundBuilder putFloat(String key, float value)
     {
-        this.nbt.putFloat(key, value);
-        return this;
+        return this.put(key, NbtFloat.of(value));
     }
 
     public NbtCompoundBuilder putDouble(String key, double value)
     {
-        this.nbt.putDouble(key, value);
-        return this;
+        return this.put(key, NbtDouble.of(value));
     }
 
     public NbtCompoundBuilder putString(String key, String value)
     {
-        this.nbt.putString(key, value);
-        return this;
+        return this.put(key, NbtString.of(value));
     }
 
     public NbtCompoundBuilder putBoolean(String key, boolean value)
     {
-        this.nbt.putBoolean(key, value);
-        return this;
+        return this.put(key, NbtByte.of(value));
     }
 }

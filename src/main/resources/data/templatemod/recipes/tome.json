@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:leather"
+        },
+        {
+            "item": "minecraft:paper"
+        },
+        {
+            "item": "minecraft:paper"
+        },
+        {
+            "item": "minecraft:gold_nugget"
+        },
+        {
+            "tag": "templatemod:nether_fungus"
+        }
+    ],
+    "result": {
+        "item": "templatemod:tome",
+        "count": 1
+    }
+}

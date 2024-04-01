@@ -1,12 +1,11 @@
 package dev.bscit.templatemod.lib;
 
 import java.util.UUID;
+
 import net.minecraft.nbt.*;
 
-public class NbtListBuilder extends NbtBuilder
+public class NbtListBuilder extends NbtBuilder<NbtList>
 {
-    public NbtList nbt;
-
     public NbtListBuilder()
     {
         this.nbt = new NbtList();
@@ -18,12 +17,7 @@ public class NbtListBuilder extends NbtBuilder
         return this;
     }
 
-    public NbtListBuilder add(NbtCompoundBuilder builder)
-    {
-        return this.add((NbtElement)builder.nbt);
-    }
-
-    public NbtListBuilder add(NbtListBuilder builder)
+    public <T extends NbtElement> NbtListBuilder add(NbtBuilder<T> builder)
     {
         return this.add((NbtElement)builder.nbt);
     }

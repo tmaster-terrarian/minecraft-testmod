@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "templatemod:block/infuser_front",
+    "north": "templatemod:block/infuser_front",
+    "south": "templatemod:block/infuser_side",
+    "east": "templatemod:block/infuser_side",
+    "west": "templatemod:block/infuser_front",
+    "up": "templatemod:block/infuser_top",
+    "down": "templatemod:block/infuser_bottom"
+  }
+}
